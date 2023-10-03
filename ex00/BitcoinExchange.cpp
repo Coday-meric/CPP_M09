@@ -91,8 +91,8 @@ void BitcoinExchange::calcul() {
 		} else {
 			res = it->second * this->db.find(it->first)->second;
 		}
-		if (res >= 2147483648) {
-			std::cerr << "Error: too large a number." << std::endl;
+		if (res >= 1000) {
+			std::cerr << "Error: too large number." << std::endl;
 		} else if (it->second < 0) {
 			std::cerr << "Error: not a positive number." << std::endl;
 		} else

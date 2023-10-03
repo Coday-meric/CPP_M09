@@ -1,21 +1,19 @@
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
 int main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cerr << "Error: could not open file." << std::endl;
+	if (argc == 1) {
+		std::cerr << "Error: List not found in parameter." << std::endl;
 		return 0;
 	}
-	RPN Rpn;
 
-	try {
-		Rpn.setExpress(static_cast<std::string>(argv[1]));
-		Rpn.calcul();
+	try{
+		PmergeMe Pm(argc, argv);
+		Pm.display();
 	}
-	catch (std::invalid_argument &e) {
-		std::cout << 0 << std::endl;
-	}
-	catch (std::exception &e) {
+	catch (std::exception & e)
+	{
 		std::cerr << e.what() << std::endl;
 	}
+
 	return 0;
 }

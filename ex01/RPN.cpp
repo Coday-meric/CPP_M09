@@ -30,6 +30,11 @@ void RPN::calcul() {
 			res = first - last;
 			break;
 		case '/':
+			if (first == 0 or last == 0)
+			{
+				res = 0;
+				break;
+			}
 			res = first / last;
 			break;
 		case '*':
@@ -49,7 +54,12 @@ void RPN::calcul() {
 				res = res - last;
 				break;
 			case '/':
-				res = res / last;
+				if (first == 0 or last == 0)
+				{
+					res = 0;
+					break;
+				}
+				res = first / last;
 				break;
 			case '*':
 				res = res * last;

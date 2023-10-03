@@ -16,6 +16,8 @@ private:
 public:
 	RPN();
 	~RPN();
+	RPN(RPN const &src);
+	RPN &operator=(RPN const &rhs);
 	void setExpress(std::string expression);
 	void calcul();
 	bool format(std::string elem);

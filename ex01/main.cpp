@@ -7,15 +7,6 @@ int main(int argc, char **argv) {
 	}
 	RPN Rpn;
 
-	try {
-		Rpn.setExpress(static_cast<std::string>(argv[1]));
-		Rpn.calcul();
-	}
-	catch (std::invalid_argument &e) {
-		std::cout << 0 << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
+	Rpn.calcul(static_cast<std::string>(argv[1]));
 	return 0;
 }

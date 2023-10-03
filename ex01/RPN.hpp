@@ -12,21 +12,13 @@
 
 class RPN {
 private:
-	std::stack<std::string> rpn;
+	std::stack<double> numbers;
 public:
 	RPN();
 	~RPN();
 	RPN(RPN const &src);
 	RPN &operator=(RPN const &rhs);
-	void setExpress(std::string expression);
-	void calcul();
-	bool format(std::string elem);
-	class Error : public std::exception {
-	public:
-		virtual const char *what() const throw() {
-			return "Le programme a quitte !";
-		}
-	};
+	void calcul(std::string input);
 };
 
 #endif //RPN_HPP

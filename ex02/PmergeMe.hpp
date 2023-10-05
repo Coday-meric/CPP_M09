@@ -10,6 +10,7 @@
 #include <iostream>
 #include <time.h>
 #include <exception>
+#include <cctype>
 
 class PmergeMe {
 private:

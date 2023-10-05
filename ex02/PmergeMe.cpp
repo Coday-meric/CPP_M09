@@ -15,10 +15,15 @@ PmergeMe::~PmergeMe() {
 PmergeMe::PmergeMe(int argc, char **argv) {
 	int i = 1;
 	int temp;
+	std::string temps;
 
 	while (i < argc)
 	{
 		temp = std::atoi(argv[i]);
+		temps = static_cast<std::string>(argv[i]);
+		for (int i = 0; i < temps.length (); i++)
+			if (!isdigit(temps[i]))
+				throw NumberNotNumber();
 		if (temp <= 0)
 			throw NumberNotNumber();
 		listv.push_back(temp);
